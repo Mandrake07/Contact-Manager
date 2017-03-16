@@ -1,0 +1,28 @@
+def run_contacts()
+    action = input (What would you like to do? )
+    if "Print all contacts"
+        print contacts.sort()
+#write to the terminal all names, phone numbers and emails on your list. [Optional: if you want a tougher challenge, print the contacts in alphabetical order (of names).]
+    if "Search for a contact"
+#ask the user to enter a name (or a part of a name). Print to the screen all the matching records, showing for each the full name, phone number and email. Matching should be case insensitive. For example, if I enter "john", I should get all records that contain "john" in the name -- both "john smith", "john alberts" as well as "mary john stevens"
+    if "Add a contact"
+        add_contact()
+#prompt the user to enter a name, phone number and email address. Store this information in the 'contacts' list. (Note: because of the way we store our information in the 'contacts.dat' file, your program will behave in an unexpected way if the user enters a comma in any of these. That is fine for the purpose of this assignment. However, if you want an additional challenge do the following. Optional: Check whether the user inserted a comma in any of these and, in those cases, prompt them again to reenter that information without commas. To be able to do this over and over again until the user provides "comma-less" input (think of a stubborn user who keeps insisting on using commas, thus threatening the integrity of the data you are storing on disk), you need to use a while loop.)
+    if "Delete a contact"
+        delete_contact()
+"Delete a contact": prompt the user to enter a name. If the name entered matches (case insensitive) the name of a contact in 'contacts', delete that contact from 'contacts'. Report to the user if a contact was found and removed or not. Note: the matching here should be different from that in "Search for a contact". If I type "john", then the only contact that should be deleted (should it exist at all) is one where the name on record is simply "john" -- the recors for "john smith", "john alberts" and "mary john stevens" should not be deleted. With this said, remember to make this search case insensitive.
+    if "Help"
+#should simply print out which keypresses the program recognizes and what each of them does.
+    if "Quit"
+#save all the data to the file "contacts.dat" and print a statement saying how many contacts we have as well as how many have been created and/or deleted during this run of the program. Eg: "Added 2 contacts and deleted 0 contacts. All 498 contacts have been saved to disk."
+    else print ("Sorry, I didn't understand that.")
+        run_contacts()
+    return
+   
+def add_contact()
+		
+####################################
+
+with open ("contact.dat'", "w") as contacts
+
+run_contacts()
