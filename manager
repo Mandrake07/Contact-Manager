@@ -1,9 +1,10 @@
 def run_contacts()
     action = input (What would you like to do? )
     if "Print all contacts"
-        print contacts.sort()
+        print contacts()
 #write to the terminal all names, phone numbers and emails on your list. [Optional: if you want a tougher challenge, print the contacts in alphabetical order (of names).]
     if "Search for a contact"
+    	contact_search()
 #ask the user to enter a name (or a part of a name). Print to the screen all the matching records, showing for each the full name, phone number and email. Matching should be case insensitive. For example, if I enter "john", I should get all records that contain "john" in the name -- both "john smith", "john alberts" as well as "mary john stevens"
     if "Add a contact"
         add_contact()
@@ -12,17 +13,40 @@ def run_contacts()
         delete_contact()
 "Delete a contact": prompt the user to enter a name. If the name entered matches (case insensitive) the name of a contact in 'contacts', delete that contact from 'contacts'. Report to the user if a contact was found and removed or not. Note: the matching here should be different from that in "Search for a contact". If I type "john", then the only contact that should be deleted (should it exist at all) is one where the name on record is simply "john" -- the recors for "john smith", "john alberts" and "mary john stevens" should not be deleted. With this said, remember to make this search case insensitive.
     if "Help"
+    	print (Type "Search for a contact" to find a contact by name., 
 #should simply print out which keypresses the program recognizes and what each of them does.
     if "Quit"
+    	new_file.close()
+	os.replace("my_file.temporary.txt", "contacts.dat")
+    	
 #save all the data to the file "contacts.dat" and print a statement saying how many contacts we have as well as how many have been created and/or deleted during this run of the program. Eg: "Added 2 contacts and deleted 0 contacts. All 498 contacts have been saved to disk."
     else print ("Sorry, I didn't understand that.")
         run_contacts()
     return
    
 def add_contact()
+	name = input("Enter contact's name: ")
+	phone_number= input("Enter contact's phone number: ")
+	email = input("Enter contact's e-mail: ")
+	return name, phone_number, email
+def contact_search()
+	search_list = []
+    	search = input("Enter the information you would like to search for: ")
+    	for item in Contact:
+        if search in item:
+            search_list.append(item)
+        else: continue
+    	for item in search_list:
+        print (item, Contact[item])
+    	return
+def delete_contact()
+	delete = input("Enter the contact you would to delete: ")
+    	print("%s has been deleted from your contacts." % (delete))
+    	return delete
 		
 ####################################
+new_file = open("my_file.temporary.txt","w")
 
-with open ("contact.dat'", "w") as contacts
+new_file.write(file_contents)
 
 run_contacts()
